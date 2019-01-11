@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-    *@ClassName HeapDumpDemo
+    *@ClassName HeapDumpDemo03
     *@Description 堆内存展示案例
     *@Author Liang
     *@Date 2019/1/10 10:03
@@ -20,7 +20,7 @@ import java.util.List;
  *  长期存活的对象进入老年代
  *
  */
-public class HeapDumpDemo {
+public class HeapDumpDemo03 {
 
     public static void main(String[] args) {
         List<HeapOOm> list = new ArrayList<HeapOOm>();
