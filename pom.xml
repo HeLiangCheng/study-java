@@ -13,6 +13,7 @@
         <module>java-network</module>
         <module>java-algorithm</module>
         <module>java-jvm</module>
+        <module>java-datastructure</module>
     </modules>
 
 </project>
