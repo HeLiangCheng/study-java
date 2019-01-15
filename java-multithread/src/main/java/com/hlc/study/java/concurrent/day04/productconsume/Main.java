@@ -1,6 +1,5 @@
-package com.hlc.study.java.concurrent.day03.demo03.productconsume;
+package com.hlc.study.java.concurrent.day04.productconsume;
 
-import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**

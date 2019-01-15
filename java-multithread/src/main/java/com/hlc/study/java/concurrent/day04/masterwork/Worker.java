@@ -1,4 +1,4 @@
-package com.hlc.study.java.concurrent.day03.demo03.masterwork;
+package com.hlc.study.java.concurrent.day04.masterwork;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;

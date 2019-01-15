@@ -1,4 +1,4 @@
-package com.hlc.study.java.concurrent.day03.demo03.masterwork;
+package com.hlc.study.java.concurrent.day04.masterwork;
 /**
     *@ClassName Main
     *@Description todo

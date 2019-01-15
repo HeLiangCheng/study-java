@@ -1,6 +1,4 @@
-package com.hlc.study.java.concurrent.day03.demo03.future;
-
-import java.awt.*;
+package com.hlc.study.java.concurrent.day04.future;
 
 /**
     *@ClassName FutureData
