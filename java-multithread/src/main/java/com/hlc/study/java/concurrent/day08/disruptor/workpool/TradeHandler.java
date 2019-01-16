@@ -1,6 +1,5 @@
-package com.hlc.study.java.concurrent.day08.disruptor.eventprocessor;
+package com.hlc.study.java.concurrent.day08.disruptor.workpool;
 
-import com.hlc.study.java.concurrent.day08.disruptor.base.DataEvent;
 import com.lmax.disruptor.EventHandler;
 import com.lmax.disruptor.WorkHandler;
 
@@ -15,11 +14,11 @@ import com.lmax.disruptor.WorkHandler;
 public class TradeHandler implements EventHandler<Trade>,WorkHandler<Trade> {
 
     public void onEvent(Trade trade, long l, boolean b) throws Exception {
-        System.out.println("处理订单 > " + trade.getId() + ":" + trade.getName() + ":" + trade.getPrice());
+     this.onEvent(trade);
     }
+
 
     public void onEvent(Trade trade) throws Exception {
-        this.onEvent(trade);
+        System.out.println("处理订单 > " + trade.getId() + ":" + trade.getName() + ":" + trade.getPrice());
     }
-
 }

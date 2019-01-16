@@ -26,9 +26,6 @@ public class Main {
         //创建bufferSzie,也就是RingBuffer的大小，必须是2的n次方
         int ringbuffersize = 1024 * 1024;
 
-        //线程池
-        ExecutorService executor = Executors.newCachedThreadPool();
-
           /*
           createSingleProducer  创建一个单生产者的RingBuffer
               第一个参数叫EventFactory，从名字上理解就是"事件工厂"，其实它的职责就是产生数据填充RingBuffer的区块。
