@@ -8,9 +8,15 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>java-multithread</artifactId>
-    <description>Java并发编程部分</description>
+    <description>disruptor高并发框架介绍</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+    </dependencies>
 
 </project>
