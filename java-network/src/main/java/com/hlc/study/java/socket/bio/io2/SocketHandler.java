@@ -1,4 +1,4 @@
-package com.hlc.study.java.socket.bio;
+package com.hlc.study.java.socket.bio.io2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,28 +7,38 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
-    *@ClassName Client
+    *@ClassName SocketHandler
     *@Description todo
     *@Author Liang
-    *@Date 2019/1/16 16:09
+    *@Date 2019/1/16 15:43
     *@Version 1.0
 **/
 
-public class Client implements  Runnable {
+public class SocketHandler implements Runnable {
+
+    private Socket socket;
+
+    public SocketHandler(Socket socket) {
+        this.socket = socket;
+    }
+
     public void run() {
-        System.out.println("启动服务端，监听数据.....");
+        System.out.println(Thread.currentThread().getName()+"线程处理请求");
         BufferedReader reader = null;
         PrintWriter writer = null;
         try {
-            Socket socket = new Socket("127.0.0.1", 8889);
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
-            String cmd = "客户端：" + Thread.currentThread().getName() + "发送数据";
-            writer.println(cmd);
-            writer.flush();
-            //获取服务端返回信息
-            String result = reader.readLine();
-            System.out.println(Thread.currentThread().getName() + "服务返回信息：" + result);
+            while (true) {
+                //处理输入数据
+                String line = reader.readLine();
+                if(line!=null && !"".equals(line)) {
+                    System.out.println("接收到client端传输的数据：" + line);
+                    //输出数据处理
+                    writer.println("收到");
+                    writer.flush();
+                }
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -48,4 +58,5 @@ public class Client implements  Runnable {
             }
         }
     }
+
 }

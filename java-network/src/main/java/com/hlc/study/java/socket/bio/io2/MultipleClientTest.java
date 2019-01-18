@@ -1,11 +1,10 @@
-package com.hlc.study.java.socket.io2;
+package com.hlc.study.java.socket.bio.io2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Scanner;
 
 /**
     *@ClassName MultipleClientTest

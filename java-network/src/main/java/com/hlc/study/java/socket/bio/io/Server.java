@@ -1,46 +1,41 @@
-package com.hlc.study.java.socket.io2;
+package com.hlc.study.java.socket.bio.io;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
+import java.net.SocketAddress;
 
 /**
-    *@ClassName Client
+    *@ClassName Server
     *@Description todo
     *@Author Liang
-    *@Date 2019/1/16 14:42
+    *@Date 2019/1/16 14:43
     *@Version 1.0
 **/
 
-public class Client {
+//服务端
+public class Server {
+
+    private static int port = 8889;
 
     public static void main(String[] args) {
         System.out.println("启动服务端，监听数据.....");
         BufferedReader reader = null;
         PrintWriter writer = null;
         try {
-            Socket socket = new Socket("127.0.0.1", 8889);
+            ServerSocket server = new ServerSocket(port);
+            Socket socket = server.accept();
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
-
-            String cmd="";
-            Scanner scanner = new Scanner(System.in);
             while (true) {
-                System.out.println("请输入....");
-                cmd = scanner.next();
-                if(cmd.equals("exit")){
-                    break;
-                }
-                writer.println(cmd);
+                //处理输入数据
+                String line = reader.readLine();
+                System.out.println("接收到client端传输的数据：" + line);
+                //输出数据处理
+                writer.println("收到");
                 writer.flush();
-                //获取服务端返回信息
-                String result = reader.readLine();
-                System.out.println("服务返回信息：" + result);
             }
-            System.out.println("退出客户端");
         } catch (Exception ex) {
             ex.printStackTrace();
         }finally {
@@ -52,4 +47,5 @@ public class Client {
             }
         }
     }
+
 }
